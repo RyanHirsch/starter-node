@@ -4,5 +4,5 @@
     "node": true,
     "mocha": true
   },
-  "extends": [ "eslint-config-hirsch" ]
+  "extends": [ "hirsch" ]
 }
