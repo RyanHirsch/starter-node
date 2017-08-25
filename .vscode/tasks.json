@@ -14,7 +14,7 @@
     {
       "label": "build",
       "type": "npm",
-      "script": "build",
+      "script": "build:debug",
       "group": "build"
     }
   ]

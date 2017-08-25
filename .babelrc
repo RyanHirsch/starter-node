@@ -1,6 +1,4 @@
 {
-  "sourceMaps": "inline",
-  "retainLines": true,
   "plugins": ["transform-object-rest-spread"],
   "presets": [
     [
