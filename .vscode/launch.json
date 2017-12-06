@@ -2,16 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run mocha",
+      "name": "Jest",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "stopOnEntry": false,
-      "args": ["--compilers", "js:babel-core/register", "${file}", "--no-timeouts"],
+      "args": ["-i", "${file}"],
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": null,
       "sourceMaps": true,
-      "env": { "NODE_ENV": "test"}
+      "env": { "NODE_ENV": "test" }
     },
     {
       "type": "node",
@@ -20,9 +20,7 @@
       "program": "${workspaceRoot}/dist/index.js",
       "cwd": "${workspaceRoot}",
       "preLaunchTask": "build",
-      "outFiles": [
-        "${workspaceRoot}/dist/**.js"
-      ]
+      "outFiles": ["${workspaceRoot}/dist/**.js"]
     }
   ]
 }
