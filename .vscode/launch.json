@@ -11,7 +11,7 @@
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": null,
       "sourceMaps": true,
-      "env": { "NODE_ENV": "test" }
+      "protocol": "inspector"
     },
     {
       "type": "node",
