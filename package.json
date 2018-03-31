@@ -13,7 +13,10 @@
     "lint": "eslint src",
     "test": "NODE_ENV=test jest"
   },
-  "pre-commit": ["test", "lint-staged"],
+  "pre-commit": [
+    "test",
+    "lint-staged"
+  ],
   "lint-staged": {
     "*.js": "eslint"
   },
@@ -38,10 +41,18 @@
     "nodemon": "^1.17.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.11.1",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "superagent": "^3.8.2",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
-    "winston": "^3.0.0-rc3"
+    "winston": "^3.0.0-rc3",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "serve-static": "^1.13.2"
   }
 }

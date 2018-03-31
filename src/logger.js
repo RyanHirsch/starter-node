@@ -18,19 +18,28 @@ const levels = {
 
 const logger = createLogger({
   level: levels[process.env.NODE_ENV] || 'info',
-  format: combine(timestamp(), json()),
+  format: simple(),
   transports: [
-    new transports.File({ filename: 'error.log', level: 'error' }),
-    new transports.File({ filename: 'combined.log' }),
+    new transports.File({
+      filename: 'error.log',
+      level: 'error',
+      format: combine(timestamp(), json()),
+    }),
+    new transports.File({ filename: 'combined.log', format: combine(timestamp(), json()) }),
   ],
 });
 
 if (isDev()) {
   logger.add(
     new transports.Console({
-      format: combine(timestamp(), simple()),
+      format: simple(),
     })
   );
 }
 
 export default logger;
+export const stream = {
+  write(message) {
+    logger.info(message);
+  },
+};

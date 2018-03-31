@@ -1,15 +1,13 @@
+import app from './app';
+import getConfig from './config';
 import logger from './logger';
 
-logger.log('verbose', 'Working', { ...{ hi: 'there' }, you: 'person' }); // eslint-disable-line no-console
-
-function transform(item) {
-  return {
-    ...item,
-    foo: true,
-  };
+function started(err) {
+  if (err) {
+    logger.log('error', err);
+    throw err;
+  }
+  logger.log('info', `Up and running ${this.address().port}`);
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export function aSimpleTest(arr) {
-  return arr.map(transform);
-}
+getConfig().then(config => app.listen(config.port, started));

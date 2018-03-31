@@ -14,5 +14,7 @@ export function isProd() {
 
 export default async function getConfig() {
   env.config();
-  return {};
+  return {
+    port: process.env.PORT || 3003,
+  };
 }
