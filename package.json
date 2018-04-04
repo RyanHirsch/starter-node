@@ -11,12 +11,9 @@
     "build:debug": "npm run build -- --source-maps=inline",
     "dev": "nodemon --watch src --exec babel-node src/index.js",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
-  "pre-commit": [
-    "test",
-    "lint-staged"
-  ],
+  "pre-commit": ["test", "lint-staged"],
   "lint-staged": {
     "*.js": "eslint"
   },
@@ -43,5 +40,8 @@
     "prettier": "^1.11.1",
     "rimraf": "^2.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "winston": "^3.0.0-rc3"
+  }
 }

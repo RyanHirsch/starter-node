@@ -1,4 +1,6 @@
-console.log({ ...{ hi: 'there' }, you: 'person' }); // eslint-disable-line no-console
+import logger from './logger';
+
+logger.log('verbose', 'Working', { ...{ hi: 'there' }, you: 'person' }); // eslint-disable-line no-console
 
 function transform(item) {
   return {
